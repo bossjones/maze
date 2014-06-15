@@ -1,0 +1,8 @@
+#JSGF V1.0;
+
+grammar maze;
+
+public <maze> = <comand>;
+
+<comando> = GO UP | GO DOWN | GO BACKWARD | GO FORWARD;
+<loop> = (BASURA)+;

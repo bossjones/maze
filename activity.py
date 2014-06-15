@@ -14,14 +14,25 @@ from sugar.graphics.toolbarbox import ToolbarBox
 from sugar.graphics.toolbutton import ToolButton
 from gettext import gettext as _
 
+from sugarlistens.helper import RecognitionHelper
+
 
 class MazeActivity(olpcgames.PyGameActivity):
     game_name = 'game'
     game_title = _('Maze')
     game_size = None    # Let olpcgames pick a nice size for us
 
+    def asr_listener(self, text):
+        logging.info('user says: ' + text)
+
     def __init__(self, handle):
         super(MazeActivity, self).__init__(handle)
+
+        # initialize asr support
+        import os
+        self.__recognizer = RecognitionHelper(os.getcwd())
+        self.__recognizer.listen(self.asr_listener)
+        self.__recognizer.start_listening()
 
         # This code was copied from olpcgames.activity.PyGameActivity
         def shared_cb(*args, **kwargs):
