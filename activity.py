@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+import os
 import logging
 import olpcgames
 import pygame
@@ -22,16 +23,26 @@ class MazeActivity(olpcgames.PyGameActivity):
     game_title = _('Maze')
     game_size = None    # Let olpcgames pick a nice size for us
 
-    def asr_listener(self, text):
-        logging.info('user says: ' + text)
+    def asr_listener(self, text, pattern, direction):
+        print "move: " + direction
+        if direction == 'down':
+            key = pygame.K_DOWN
+        elif direction == 'up':
+            key = pygame.K_UP 
+        elif direction == 'left':
+            key = pygame.K_LEFT
+        elif direction == 'right':
+            key = pygame.K_RIGHT
+
+        if key:
+            pygame.event.post(pygame.event.Event(pygame.KEYDOWN, key=key))
 
     def __init__(self, handle):
         super(MazeActivity, self).__init__(handle)
 
         # initialize asr support
-        import os
         self.__recognizer = RecognitionHelper(os.getcwd())
-        self.__recognizer.listen(self.asr_listener)
+        self.__recognizer.listen_to('go (?P<direction>up|down|left|right)', self.asr_listener)
         self.__recognizer.start_listening()
 
         # This code was copied from olpcgames.activity.PyGameActivity
