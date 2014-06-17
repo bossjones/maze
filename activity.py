@@ -42,7 +42,7 @@ class MazeActivity(olpcgames.PyGameActivity):
 
         # initialize asr support
         self.__recognizer = RecognitionHelper(os.getcwd())
-        self.__recognizer.listen_to('go (?P<direction>up|down|left|right)', self.asr_listener)
+        self.__recognizer.listen_to('(go|turn) (?P<direction>up|down|left|right)', self.asr_listener)
         self.__recognizer.start_listening()
 
         # This code was copied from olpcgames.activity.PyGameActivity

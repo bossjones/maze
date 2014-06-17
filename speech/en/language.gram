@@ -4,4 +4,4 @@ grammar maze;
 
 public <maze> = <comand>;
 
-<comando> = GO UP | GO DOWN | GO LEFT | GO RIGHT;
+<comando> = GO UP | GO DOWN | TURN LEFT | TURN RIGHT;
