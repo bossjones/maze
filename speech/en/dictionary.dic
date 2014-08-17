@@ -4,7 +4,7 @@ right   R AY T
 go      G OW
 left L EH F T
 turn    T ER N
-new     N UW
+new    N UW
 new(2)  N Y UW
 game    G EY M
 stop    S T AA P
@@ -12,3 +12,42 @@ activity        AE K T IH V AH T IY
 activity(2)     AE K T IH V IH T IY
 harder  HH AA R D ER
 easier  IY Z IY ER
+wildcard AA
+wildcard(2) AE
+wildcard(3) AH
+wildcard(4) AO
+wildcard(5) AW
+wildcard(6) AY
+wildcard(7) B
+wildcard(8) CH
+wildcard(9) D
+wildcard(10) DH
+wildcard(11) EH
+wildcard(12) ER
+wildcard(13) EY
+wildcard(14) F
+wildcard(15) G
+wildcard(16) HH
+wildcard(17) IH
+wildcard(18) IY
+wildcard(19) JH
+wildcard(20) K
+wildcard(21) L
+wildcard(22) M
+wildcard(23) N
+wildcard(24) NG
+wildcard(25) OW
+wildcard(26) OY
+wildcard(27) P
+wildcard(28) R
+wildcard(29) S
+wildcard(30) SH
+wildcard(31) T
+wildcard(32) TH
+wildcard(33) UH
+wildcard(34) UW
+wildcard(35) V
+wildcard(36) W
+wildcard(37) Y
+wildcard(38) Z
+wildcard(39) ZH
